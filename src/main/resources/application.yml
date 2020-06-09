@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: resource-server
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/santosh?autoreconnect=true"
+    password: "root"
+    username: "root"
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 8000
+    
+server:
+   port:8091
+   
+security: 
+  oauth2: 
+    resource: 
+      filter-order: 3
+      jwt:
+        key-value: -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz5I2ahs1rEsAFO0CtzjvElDpl396PSTwsxcmHi9RbC9jiNVfeMs0GCIWquqQ/ApJ7U6B7nMpwdFSGkQq4yKB3N594ma0h1QtDYXWpJD/YE7rP8JgAxPRXkmDvte44iB74kogqfXEIBVos/9MR9RN98obmveGdUK0B9rWqWIZJPNBcvk1Zm57p3mgfJOy7lL1zghvRtv01q/0eVjXHlOe6h/KiG6o0SMgQ9EwThfVDdOr69CTKMkp4i447lPQq0i9CDgAihCRnKUe47gYwfloLQauRiFUuKNPA0LsuP3xKhfaEhMD2UeDHpGv7fobN0OfLdjWwzsJpMDA4WhW00Kg9QIDAQAB-----END PUBLIC KEY-----
